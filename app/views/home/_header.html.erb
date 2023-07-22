@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #808080;">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+            <%= link_to 'Home', root_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'About', home_about_path, class:"nav-link" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Pandas', pandas_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'New Panda', new_panda_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit User', edit_user_registration_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Log Out', destroy_user_session_path,method: :delete, class:"nav-link" %>
+          </li>
+        <% else %>  
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
+          </li>
+        <% end %>  
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

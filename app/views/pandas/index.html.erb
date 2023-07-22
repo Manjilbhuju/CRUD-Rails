@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pandas</h1>
+
+<div id="pandas">
+  <% @pandas.each do |panda| %>
+    <%= render panda %>
+    <p>
+      <%# <%= link_to "Show this panda", panda %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New panda", new_panda_path %>

@@ -1,0 +1,25 @@
+<% if panda.user == current_user %>
+  <div id="<%= dom_id panda %>">
+    <table class="table">
+      <thead>
+        <tr class="table-primary">
+          <th>Name</th>
+          <th>Email</th>
+          <th>Group</th>
+          <th>User Id</th>
+        </tr> 
+      </thead>
+
+      <tbody>
+          <tr class="table-info">
+            <td><%= link_to panda.first_name + '' + panda.last_name, panda %>
+                <%# <%= panda.first_name %>
+                <%# <%= panda.last_name %></td>
+            <td><%= panda.email %></td>
+            <td><%= panda.group %></td>
+            <td><%= panda.user_id%></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
