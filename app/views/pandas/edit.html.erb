@@ -3,9 +3,7 @@
 <%= render "form", panda: @panda %>
 
 <br>
-<% if panda.user == current_user %>
-  <div>
-    <%= link_to "Show this panda", @panda %> |
-    <%= link_to "Back to pandas", pandas_path %>
-  </div>  
-<% end %>
+<div>
+  <%= link_to "Show this panda", @panda %> |
+  <%= link_to "Back to pandas", pandas_path %>
+</div>
